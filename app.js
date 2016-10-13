@@ -9,10 +9,20 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+var ejs = require('ejs');
+
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine','ejs');
+//app.engine('.html',require('ejs').__express);
+//app.engine('html', require('ejs').renderFile);
+
 
 // view engine setup
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.engine('html',ejs.__express);
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

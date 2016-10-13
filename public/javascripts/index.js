@@ -114,12 +114,6 @@ for (var i = 0; i < types.length; i++) {
 	};
 }
 
-canvas.onclick = function() {
-	if (draw.type == "dot"){
-
-	};
-}
-
 $("#volume")[0].onchange = function() {
 	mv.changeVolume(this.value / this.max);
 };
