@@ -1,0 +1,168 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	font-size: 14px;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #000;
+  color: #FFF;
+  text-align: center;
+}
+
+header,
+.left,
+.right {
+	position: absolute;
+}
+
+header {
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	height: 150px;
+}
+
+header h1 {
+	font-size: 40px;
+	height: 60px;
+	line-height: 60px;
+}
+
+header .type {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+header .type li {
+	float: left;
+	list-style: none;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	color: #FFF;
+	border-top: 1px solid #FFF;
+	border-right: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+	cursor: pointer;
+}
+
+header .type li:first-child {
+    border-left: solid 1px #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+header .type li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+header .type li.selected {
+	color: #000;
+	background-color: #FFF;
+}
+
+input[type="range"]{
+	-webkit-appearance: none;
+	height: 8px;
+	cursor: pointer;
+	background-color: #999;
+	border-radius: 10px;
+	outline: none; 
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+	background-color: #FFF;
+	border-radius: 100%;
+}
+
+input[type="range"]::-moz-range-track {
+	height: 8px;
+	background-color: #999;
+	border-radius: 10px;
+	border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: 12px;
+	height: 12px;
+	background-color: #FFF;
+	border: none;
+	border-radius: 100%;
+}
+
+.left {
+	top: 170px;
+	left: 10px;
+	bottom: 10px;
+	width: 15%;
+	overflow: auto;
+	border: 1px solid #FFF;
+}
+
+.left ul {
+	overflow: auto;
+}
+
+.left ul li {
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+
+.left ul li.selected {
+	color: green;
+}
+
+.right {
+	top: 170px;
+	left: -webkit-calc(15% + 20px);
+	left: calc(15% + 20px);
+	right: 10px;
+	bottom: 10px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+@media screen and (max-width: 800px),screen and (max-height: 500px){
+	body {
+		font-size: 12px;
+	}
+
+	header {
+		height: 80px;
+	}
+
+	header h1 {
+		font-size: 24px;
+		height: 34px;
+		line-height: 34px;
+	}
+
+	header .type li {
+		width: 50px;
+		height: 16px;
+		line-height: 16px;
+	}
+
+	.left,.right {
+		top: 100px;
+	}
+}
