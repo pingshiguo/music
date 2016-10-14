@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 			console.log(err);
 		} else {
 			res.render('index', {
-				title: 'Passionate Music',
+				title: 'Visualization Music',
 				music: names
 			});
 		}
