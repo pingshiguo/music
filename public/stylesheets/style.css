@@ -1,39 +1,71 @@
 * {
 	margin: 0;
 	padding: 0;
+	color: #FFF;
 	box-sizing: border-box;
 }
 
 html,
 body {
 	height: 100%;
-	font-size: 14px;
+	overflow: hidden;
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #000;
-  color: #FFF;
-  text-align: center;
+	position: relative;
+	text-align: center;
+  	font: 16px "微软雅黑", Georgia, Serif;
+ 	background-color: #000;
 }
 
-header,
-.left,
-.right {
-	position: absolute;
+@media screen and (max-height: 450px){
+	body:{
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 500px){
+	body:{
+		font-size: 12px;
+	}
 }
 
 header {
-	top: 10px;
-	left: 10px;
-	right: 10px;
-	height: 150px;
+	height: 120px;
 }
 
 header h1 {
-	font-size: 40px;
-	height: 60px;
-	line-height: 60px;
+	height: 70px;
+	line-height: 50px;
+	font-size: 50px;
+	padding-top: 20px;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-height: 450px){
+	header:{
+		height: 80px;
+	}
+	header h1 {
+		height: 30px;
+		line-height: 22px;
+		font-size: 26px;
+		padding-top: 8px;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width:500px) {
+	header {
+		height: 80px
+	}
+	header h1 {
+		height: 30px;
+		line-height: 22px;
+		font-size: 26px;
+		padding-top: 8px;
+		margin-bottom: 10px;
+	}
 }
 
 header .type {
@@ -43,19 +75,38 @@ header .type {
 
 header .type li {
 	float: left;
-	list-style: none;
+	list-style-type: none;
 	width: 80px;
 	height: 30px;
 	line-height: 30px;
 	color: #FFF;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 	border-top: 1px solid #FFF;
 	border-right: 1px solid #FFF;
 	border-bottom: 1px solid #FFF;
 	cursor: pointer;
 }
 
+@media screen and (max-height:450px) {
+	header .type li {
+		width: 50px;
+		height: 20px;
+		line-height: 20px;
+	}
+}
+
+@media screen and (max-width:500px) {
+	header .type li {
+		width: 50px;
+		height: 20px;
+		line-height: 20px;
+	}
+}
+
 header .type li:first-child {
-    border-left: solid 1px #fff;
+    border-left: solid 1px #FFF;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -74,8 +125,8 @@ input[type="range"]{
 	-webkit-appearance: none;
 	height: 8px;
 	cursor: pointer;
-	background-color: #999;
-	border-radius: 10px;
+	background-color: gray;
+	border-radius: 15px;
 	outline: none; 
 }
 
@@ -84,39 +135,64 @@ input[type="range"]::-webkit-slider-thumb {
 	width: 12px;
 	height: 12px;
 	cursor: pointer;
-	background-color: #FFF;
+	background-color: #DDD;
 	border-radius: 100%;
 }
 
 input[type="range"]::-moz-range-track {
 	height: 8px;
-	background-color: #999;
-	border-radius: 10px;
-	border: none;
+	background: gray;
+	border-radius: 15px;
+	border: none
 }
 
 input[type="range"]::-moz-range-thumb {
 	width: 12px;
 	height: 12px;
-	background-color: #FFF;
+	background-color: #DDD;
 	border: none;
 	border-radius: 100%;
 }
 
-.left {
-	top: 170px;
-	left: 10px;
+/*input[type="range"]::-webkit-slider-thumb {
+	height: 18px;
+	width: 18px;
+}
+
+input[type="range"]::-moz-range-thumb {
+	height: 18px;
+	width: 18px
+}*/
+
+.list,
+.canvas {
+	position: absolute;
+	top: 150px;
+	bottom: 0;
+}
+
+@media screen and (max-height:450px),
+screen and (max-width:500px) {
+	.list,
+	.canvas {
+		top: 80px;
+	}
+}
+
+.list {
+	left: 20px;
 	bottom: 10px;
 	width: 15%;
 	overflow: auto;
 	border: 1px solid #FFF;
 }
 
-.left ul {
+.list .music-list {
 	overflow: auto;
 }
 
-.left ul li {
+.list .music-list li {
+	list-style-type: none;
 	height: 30px;
 	line-height: 30px;
 	overflow: hidden;
@@ -125,18 +201,23 @@ input[type="range"]::-moz-range-thumb {
 	cursor: pointer;
 }
 
-.left ul li.selected {
+.list ul li.selected {
 	color: green;
 }
 
-.right {
+.canvas {
+	/*position: absolute;
 	top: 170px;
 	left: -webkit-calc(15% + 20px);
 	left: calc(15% + 20px);
 	right: 10px;
-	bottom: 10px;
+	bottom: 10px;*/
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: -1;
 }
-
+/*
 a {
   color: #00B7FF;
 }
@@ -147,7 +228,7 @@ a {
 	}
 
 	header {
-		height: 80px;
+		height: 100px;
 	}
 
 	header h1 {
@@ -162,7 +243,7 @@ a {
 		line-height: 16px;
 	}
 
-	.left,.right {
+	.list,.canvas {
 		top: 100px;
 	}
-}
+}*/

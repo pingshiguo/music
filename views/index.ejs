@@ -8,21 +8,19 @@
   	<header>
   		<h1><%= title %></h1>
       <ul id="type" class="type">
-        <li data-type="dot" class="selected">Dot</li>
-        <li data-type="column">Column</li>
+        <li data-type="Dot" class="selected">Dot</li>
+        <li data-type="Column">Column</li>
       </ul>
       <p>
         Volume <input id='volume' type='range' min='0' max='100' value='50'>
       </p>
   	</header>
-    	<div class='left'>
-    		<ul id='list'>
-          <% music.forEach(function(name){%><li title="<%= name %>"><%= name %></li><%})%>
-    		</ul>
-    	</div>
-    	<div id='box' class='right'>
-
-    	</div>
+    <div id='list' class='list'>
+    	<ul id='music_list' class='music-list'>
+        <% music.forEach(function(name){%><li title="<%= name %>"><%= name %></li><%})%>
+    	</ul>
+    </div>
+    <div id='canvas' class='canvas'></div>
       <script type="text/javascript" src='/javascripts/MusicVisualizer.js'></script>
       <script type="text/javascript" src='/javascripts/index.js'></script>
   </body>

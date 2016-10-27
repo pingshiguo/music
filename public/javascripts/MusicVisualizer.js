@@ -1,11 +1,14 @@
 function MusicVisualizer(obj) {
-	// body...
+	this.buffer = {};
+	
 	this.source = null;
 
 	this.count = 0;
 
 	this.analyser = MusicVisualizer.ac.createAnalyser();
-	this.size = obj.size;
+
+	this.size = obj.size||32;
+
 	this.analyser.fftsize = this.size * 2;
 
 	this.gainNode = MusicVisualizer.ac[MusicVisualizer.ac.createGain ? "createGain" : "createGainNode"]();
@@ -76,11 +79,15 @@ MusicVisualizer.prototype.visualize = function() {
 	requestAnimationFrame = window.requestAnimationFrame ||
 		window.webkitRequestAnimationFrame ||
 		window.mozRequestAnimationFrame;
-
+		
+	var oldav = 0;
 	function v() {
 		self.analyser.getByteFrequencyData(arr);
+		var av = Math.round(100 * Array.prototype.reduce.call(arr, function(x, y){return x + y}) / mv.size / 256);
+		var dlav = av - oldav;
+		oldav = av;
 		//console.log(arr);
-		self.visualizer(arr);
+		self.visualizer(arr,dlav,av);
 		requestAnimationFrame(v);
 	}
 	requestAnimationFrame(v);
