@@ -201,7 +201,7 @@ screen and (max-width:500px) {
 	cursor: pointer;
 }
 
-.list ul li.selected {
+.list ul li.play {
 	color: green;
 }
 

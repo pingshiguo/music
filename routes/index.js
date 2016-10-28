@@ -8,7 +8,6 @@ var media = path.join(__dirname, '../public/media');
 router.get('/', function(req, res, next) {
 	var fs = require('fs');
 	fs.readdir(media, function(err, names) {
-
 		if (err) {
 			console.log(err);
 		} else {
