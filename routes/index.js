@@ -7,13 +7,13 @@ var media = path.join(__dirname, '../public/media');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	var fs = require('fs');
-	fs.readdir(media, function(err, names) {
+	fs.readdir(media, function(err, files) {
 		if (err) {
 			console.log(err);
 		} else {
 			res.render('index', {
-				title: 'Visualization Music',
-				music: names
+				title: 'visualization music',
+				music: files
 			});
 		}
 	});

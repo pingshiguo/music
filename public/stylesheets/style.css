@@ -18,17 +18,17 @@ body {
  	background-color: #000;
 }
 
-@media screen and (max-height: 450px){
+/*@media screen and (max-height: 450px){
 	body:{
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 
 @media screen and (max-width: 500px){
 	body:{
-		font-size: 12px;
+		font-size: 14px;
 	}
-}
+}*/
 
 header {
 	height: 120px;
@@ -94,6 +94,7 @@ header .type li {
 		width: 50px;
 		height: 20px;
 		line-height: 20px;
+		font-size: 12px;
 	}
 }
 
@@ -102,6 +103,7 @@ header .type li {
 		width: 50px;
 		height: 20px;
 		line-height: 20px;
+		font-size: 12px;
 	}
 }
 
@@ -176,6 +178,7 @@ screen and (max-width:500px) {
 	.list,
 	.canvas {
 		top: 80px;
+		font-size: 12px;
 	}
 }
 
