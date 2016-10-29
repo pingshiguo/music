@@ -47,10 +47,10 @@ MusicVisualizer.prototype.decode = function(arraybuffer, fun) {
 
 MusicVisualizer.prototype.play = function(url) {
 	var self = this;
-	var count = ++self.count;
+	var flag = ++self.count;
 	self.source && self.stop();
 	self.load(url, function(arraybuffer) {
-		if (count != self.count) return;
+		if (flag != self.count) return;
 		self.decode(arraybuffer, function(buffer) {
 			var bs = MusicVisualizer.ac.createBufferSource();
 			bs.buffer = buffer;
