@@ -9,7 +9,7 @@ var ctx = canvas.getContext("2d");
 box.appendChild(canvas);
 
 var WIDTH, //canvas高
-	HEIGHT; //canvs 宽
+	HEIGHT; //canvas 宽
 
 var SIZE = 32; //音乐片段数
 
