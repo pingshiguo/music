@@ -156,12 +156,12 @@ input[type="range"]::-moz-range-thumb {
 	border-radius: 100%;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input.range::-webkit-slider-thumb {
 	height: 18px;
 	width: 18px;
 }
 
-input[type="range"]::-moz-range-thumb {
+input.range::-moz-range-thumb {
 	height: 18px;
 	width: 18px;
 }
