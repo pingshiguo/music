@@ -1,4 +1,5 @@
-var $ = function(s) {
+!function(){
+	var $ = function(s) {
 	return document.querySelector(s);
 }
 
@@ -175,3 +176,4 @@ $("#volume").oninput = function() {
 }
 
 $("#volume").oninput();
+}();
