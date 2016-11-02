@@ -133,7 +133,6 @@ MusicVisualizer.prototype.play = function(path) {
 		self.audioSource = MusicVisualizer.ac.createMediaElementSource(self.audio);
 		self.source = self.audioSource;
 		MusicVisualizer.play(self);
-		return;
 	}
 }
 
