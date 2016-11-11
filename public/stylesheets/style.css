@@ -14,8 +14,9 @@ body {
 body {
 	position: relative;
 	text-align: center;
-  	font: 16px "微软雅黑", Georgia, Serif;
+  	font: 16px "微软雅黑";
  	background-color: #000;
+ 	z-index: -1;
 }
 
 /*@media screen and (max-height: 450px){
@@ -32,6 +33,7 @@ body {
 
 header {
 	height: 120px;
+	z-index: 1;
 }
 
 header h1 {
@@ -188,6 +190,7 @@ screen and (max-width:500px) {
 	width: 15%;
 	overflow: auto;
 	border: 1px solid #FFF;
+	z-index: 1;
 }
 
 .list .music-list {
@@ -213,4 +216,9 @@ screen and (max-width:500px) {
 	right: 0;
 	left: 0;
 	z-index: -1;
+}
+
+canvas {
+	z-index: 1;
+	cursor: pointer;
 }

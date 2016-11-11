@@ -9,6 +9,8 @@
 
 	box.appendChild(canvas);
 
+
+
 	var WIDTH, //canvas高
 		HEIGHT; //canvas 宽
 
@@ -166,7 +168,7 @@
 		}
 	}();
 
-	canvas.onclick = function() {
+	$("canvas").onclick = function() {
 		if (Render.type == 'Dot') {
 			for (var i = 0; i < SIZE; i++) {
 				ARR.dotMode == "random" ? ARR[i].dx = 0 : ARR[i].dx = ARR[i].dx2;
